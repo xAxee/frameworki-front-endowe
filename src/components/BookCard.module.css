@@ -1,0 +1,54 @@
+.card {
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 2px 8px rgb(16 24 40 / 5%);
+  cursor: pointer;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgb(16 24 40 / 12%);
+  outline: none;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.rating,
+.price {
+  margin: 0;
+}
+
+.rating {
+  color: #b7791f;
+}
+
+.price {
+  margin-top: 4px;
+  font-weight: 700;
+}
