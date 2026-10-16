@@ -1,5 +1,6 @@
 import type { Book } from "../types";
 import BookCard from "./BookCard";
+import styles from "./BookList.module.css";
 
 type BookListProps = { books: Book[] };
 
@@ -9,7 +10,7 @@ export default function BookList({ books }: BookListProps) {
   }
 
   return (
-    <div>
+    <div className={styles.grid}>
       {books.map((book) => (
         <BookCard key={book.id} book={book} />
       ))}
