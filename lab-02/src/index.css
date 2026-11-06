@@ -31,3 +31,60 @@ input, select, textarea {
 label { display: grid; gap: 4px; font-size: .9rem; color: var(--muted); }
 .error { color: var(--danger); font-size: .85rem; }
 .muted { color: var(--muted); }
+
+main { display: grid; gap: 20px; }
+h1, h2, p { margin: 0; }
+h2 { font-size: 1.2rem; }
+.panel {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+}
+.section-heading, .todo-content, .todo-actions, .filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-heading { justify-content: space-between; flex-wrap: wrap; }
+.todo-form, .newsletter-form { display: grid; gap: 12px; align-items: start; }
+.todo-form { grid-template-columns: minmax(0, 1fr) 140px auto; }
+.newsletter-form { grid-template-columns: minmax(0, 1fr) auto; }
+.todo-form > button, .newsletter-form > button { margin-top: 23px; }
+.field, .edit-field { display: grid; gap: 6px; min-width: 0; }
+.field input, .field select, .edit-field input { width: 100%; min-width: 0; }
+.filter-group { flex-wrap: wrap; }
+.todo-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 10px;
+}
+.priority-niski { border-left-color: #15803d; }
+.priority-normalny { border-left-color: #b45309; }
+.priority-wysoki { border-left-color: #dc2626; }
+.todo-content { flex: 1; min-width: 0; }
+.todo-content input[type="checkbox"] { flex-shrink: 0; width: 18px; height: 18px; }
+.todo-text { overflow-wrap: anywhere; }
+.edit-field { flex: 1; }
+.priority-label { color: var(--muted); flex-shrink: 0; }
+.todo-actions { flex-shrink: 0; }
+input[aria-invalid="true"] { border-color: var(--danger); }
+button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+@media (max-width: 640px) {
+  .todo-form, .newsletter-form { grid-template-columns: minmax(0, 1fr); }
+  .todo-form > button, .newsletter-form > button { margin-top: 0; }
+  .todo-item { flex-direction: column; align-items: stretch; }
+  .todo-actions button { flex: 1; }
+  .todo-content { flex-wrap: wrap; }
+}
